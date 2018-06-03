@@ -1,3 +1,8 @@
+# Author: Kirby Powell
+
+
+#### GIVENS/GLOBALS ###
+
 values = {"P": 1,
           "N": 5,
           "D": 10}
@@ -8,10 +13,7 @@ ps = ["P", "P", "P", "P"]
 ds = ["D", "D", "D", "D"]
 ns = ["N", "N", "N", "N"]
 
-
-def validator(coins):
-    start = 0
-    clock = {0: "",
+clock = {0: "",
          1: "",
          2: "",
          3: "",
@@ -23,6 +25,11 @@ def validator(coins):
          9: "",
          10: "",
          11: ""}
+
+### ACTUAL CODE BELOW ###
+
+def validator(coins):
+    start = 0
 
     while coins:
         current, coins = coins[0], coins[1:]
@@ -61,11 +68,9 @@ def permutations(builder, p, n, d, results):
 
 if __name__ == "__main__":
     result = validator(tester)
-    # print(result)
 
     permResults = set()
 
     permutations(build_test, ps, ns, ds, permResults)
     print(permResults)
 
-    # checkPerms(permResults)
